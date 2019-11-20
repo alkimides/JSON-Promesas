@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function Action(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if (this.readyState == 4 && this.status == 200){
+                    alert(this.responseText)
+                } 
+            };
+
+            xhttp.open('GET', 'https://docs.oracle.com/en/cloud/saas/global-human-resources/19c/farws/op-emps-get.html', true); //llamamos a los datos
+            xhttp.send(); //los traemos
+        }
+    </script>
+</head>
+<body>
+    <button id="btnAction" onclick=Action();>GET INFO</button>
+</body>
+</html>
